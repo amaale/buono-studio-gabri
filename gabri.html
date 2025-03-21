@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buono Studio Gabri!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff9d9; /* colore uniforme, caldo e luminoso */
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 10px;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 40px;
+            font-size: 2.6em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 26px;
+            opacity: 0;
+            animation: float 4s ease-out forwards;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.7); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        button {
+            padding: 12px 28px;
+            background-color: #ffda44;
+            border: none;
+            color: #333;
+            font-size: 1em;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 15px 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #f7cd20;
+            transform: translateY(-3px);
+        }
+
+        #motivazione {
+            margin: 25px auto;
+            padding: 15px;
+            max-width: 600px;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #555;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Buono studio Gabri! 📚<br>💛 Da Lia 💛</h1>
+    <button onclick="spawnHearts()">✨ Pioggia di cuori! ✨</button>
+    <button onclick="mostraFrase()">💡 Nuova frase motivazionale!</button>
+
+    <div id="motivazione">Clicca il bottone per una dose di motivazione!</div>
+
+    <script>
+        const frasiMotivazionali = [
+            "Do it scared.",
+            "You're closer than you think.",
+            "Progress, not perfection.",
+            "Believe in yourself.",
+            "Success comes from persistence.",
+            "Dream big, work hard.",
+            "You got this!",
+            "Keep pushing forward.",
+            "Every effort matters.",
+            "Consistency wins.",
+            "Make yourself proud today.",
+            "Keep your eyes on the goal.",
+            "Great things never come easy.",
+            "Stay focused and persistent.",
+            "Your potential is endless.",
+            "Hard work beats talent.",
+            "Success loves discipline.",
+            "Create your own opportunities.",
+            "Small steps every day.",
+            "Never doubt your power.",
+            "You’re unstoppable!",
+            "Your dreams deserve your dedication.",
+            "Be brave enough to start.",
+            "One day or day one—you choose.",
+            "Push past your limits.",
+            "You have everything you need.",
+            "It's okay to struggle—keep going.",
+            "Embrace the challenge.",
+            "Stay hungry for success.",
+            "Greatness takes time.",
+            "Do something today your future self will thank you for.",
+            "Find strength in your purpose.",
+            "Courage, dear heart.",
+            "Every day counts.",
+            "Don't wish for it, work for it.",
+            "Take risks. It's worth it.",
+            "Your future starts today.",
+            "You are what you repeatedly do.",
+            "Make every moment count.",
+            "Be stronger than your excuses.",
+            "Determination is power.",
+            "Rise above your fears.",
+            "Success is a decision.",
+            "Today’s sacrifice, tomorrow’s success.",
+            "Work in silence, let success speak.",
+            "Strive for progress, not perfection.",
+            "Don’t stop until you’re proud.",
+            "The journey shapes you.",
+            "It's never too late to succeed.",
+            "Turn your dreams into reality.",
+            "Failure is growth in disguise.",
+            "Win in your mind first.",
+            "Setbacks are setups for comebacks.",
+            "Stay committed to your goals.",
+            "Push through discomfort.",
+            "You control your future.",
+            "Growth comes from effort.",
+            "You define your success.",
+            "Never lose your hunger.",
+            "Champions keep playing until they win.",
+            "Stay patient, trust your journey.",
+            "Act with confidence.",
+            "You’re capable of incredible things.",
+            "Motivation starts within you.",
+            "Your actions create your future.",
+            "Success is built on consistency.",
+            "One step closer every day.",
+            "Great things take time.",
+            "Make every day productive.",
+            "Commitment leads to achievement.",
+            "Persist until you succeed.",
+            "Stay disciplined and focused.",
+            "Transform challenges into strength.",
+            "You’re stronger than any obstacle.",
+            "Don’t wait for motivation, create it.",
+            "Your dreams are valid.",
+            "Move forward with courage.",
+            "No dream is too big.",
+            "Focus on your why.",
+            "Success follows effort.",
+            "Aim higher, dream bigger.",
+            "Today is your opportunity.",
+            "Choose determination over excuses.",
+            "Good things come to those who hustle.",
+            "Make it happen today.",
+            "Own your journey.",
+            "Fear is temporary, regret is forever.",
+            "Face your fears, live your dreams.",
+            "Be relentless.",
+            "Focus on progress.",
+            "The time is now.",
+            "Never underestimate yourself.",
+            "Effort is your path to greatness.",
+            "Be the hardest worker you know.",
+            "Greatness is a choice.",
+            "Keep going, you’re doing great!",
+            "Your dreams matter.",
+            "Energy and persistence conquer all.",
+            "Struggle today, strength tomorrow.",
+            "Stay hungry, stay ambitious.",
+            "The future belongs to the persistent.",
+            "You can and you will."
+        ];
+
+        function spawnHearts() {
+            for (let i = 0; i < 30; i++) createHeart();
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '💛';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        function mostraFrase() {
+            const frase = frasiMotivazionali[Math.floor(Math.random() * frasiMotivazionali.length)];
+            document.getElementById('motivazione').textContent = frase;
+        }
+
+        setInterval(spawnHearts, 5000);
+    </script>
+</body>
+</html>
