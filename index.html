@@ -9,23 +9,24 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fff9d9; /* colore uniforme, caldo e luminoso */
+            background-color: #fff9d9;
             text-align: center;
             overflow: hidden;
             margin: 0;
-            padding: 0 10px;
+            padding: 20px;
         }
 
         h1 {
             color: #333;
-            margin-top: 40px;
-            font-size: 2.6em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            font-size: 2em;
+            line-height: 1.2;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .heart {
             position: absolute;
-            font-size: 26px;
+            font-size: 20px;
             opacity: 0;
             animation: float 4s ease-out forwards;
             user-select: none;
@@ -39,34 +40,52 @@
         }
 
         button {
-            padding: 12px 28px;
+            padding: 10px 20px;
             background-color: #ffda44;
             border: none;
             color: #333;
-            font-size: 1em;
-            border-radius: 20px;
+            font-size: 0.9em;
+            border-radius: 15px;
             cursor: pointer;
-            margin: 15px 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin: 10px 5px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
             transition: all 0.3s;
         }
 
         button:hover {
             background-color: #f7cd20;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         #motivazione {
-            margin: 25px auto;
-            padding: 15px;
-            max-width: 600px;
-            font-size: 1.2em;
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 90%;
+            font-size: 1em;
             font-weight: 500;
             color: #555;
             background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         }
+
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.4em;
+            }
+            button {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+            #motivazione {
+                font-size: 1.1em;
+                max-width: 500px;
+            }
+            .heart {
+                font-size: 24px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -99,91 +118,39 @@
             "Small steps every day.",
             "Never doubt your power.",
             "You’re unstoppable!",
-            "Your dreams deserve your dedication.",
-            "Be brave enough to start.",
-            "One day or day one—you choose.",
-            "Push past your limits.",
-            "You have everything you need.",
-            "It's okay to struggle—keep going.",
-            "Embrace the challenge.",
-            "Stay hungry for success.",
-            "Greatness takes time.",
-            "Do something today your future self will thank you for.",
-            "Find strength in your purpose.",
-            "Courage, dear heart.",
-            "Every day counts.",
-            "Don't wish for it, work for it.",
-            "Take risks. It's worth it.",
-            "Your future starts today.",
-            "You are what you repeatedly do.",
-            "Make every moment count.",
-            "Be stronger than your excuses.",
-            "Determination is power.",
-            "Rise above your fears.",
-            "Success is a decision.",
-            "Today’s sacrifice, tomorrow’s success.",
-            "Work in silence, let success speak.",
-            "Strive for progress, not perfection.",
-            "Don’t stop until you’re proud.",
-            "The journey shapes you.",
-            "It's never too late to succeed.",
-            "Turn your dreams into reality.",
-            "Failure is growth in disguise.",
-            "Win in your mind first.",
-            "Setbacks are setups for comebacks.",
-            "Stay committed to your goals.",
-            "Push through discomfort.",
-            "You control your future.",
-            "Growth comes from effort.",
-            "You define your success.",
-            "Never lose your hunger.",
-            "Champions keep playing until they win.",
-            "Stay patient, trust your journey.",
-            "Act with confidence.",
-            "You’re capable of incredible things.",
-            "Motivation starts within you.",
-            "Your actions create your future.",
-            "Success is built on consistency.",
-            "One step closer every day.",
-            "Great things take time.",
-            "Make every day productive.",
-            "Commitment leads to achievement.",
-            "Persist until you succeed.",
-            "Stay disciplined and focused.",
-            "Transform challenges into strength.",
-            "You’re stronger than any obstacle.",
-            "Don’t wait for motivation, create it.",
-            "Your dreams are valid.",
-            "Move forward with courage.",
-            "No dream is too big.",
-            "Focus on your why.",
-            "Success follows effort.",
-            "Aim higher, dream bigger.",
-            "Today is your opportunity.",
-            "Choose determination over excuses.",
-            "Good things come to those who hustle.",
-            "Make it happen today.",
-            "Own your journey.",
-            "Fear is temporary, regret is forever.",
-            "Face your fears, live your dreams.",
-            "Be relentless.",
-            "Focus on progress.",
-            "The time is now.",
-            "Never underestimate yourself.",
-            "Effort is your path to greatness.",
-            "Be the hardest worker you know.",
-            "Greatness is a choice.",
-            "Keep going, you’re doing great!",
-            "Your dreams matter.",
-            "Energy and persistence conquer all.",
-            "Struggle today, strength tomorrow.",
-            "Stay hungry, stay ambitious.",
-            "The future belongs to the persistent.",
-            "You can and you will."
+            "The best way out is always through.",
+            "Stay positive, work hard.",
+            "Believe you can and you're halfway there.",
+            "No pressure, no diamonds.",
+            "Dream it. Wish it. Do it.",
+            "Your future depends on what you do today.",
+            "Be a warrior, not a worrier.",
+            "Success is a journey, not a destination.",
+            "Your only limit is your mind.",
+            "Turn your wounds into wisdom.",
+            "Don't stop until you're proud.",
+            "Every day is a second chance.",
+            "Stay strong, your story isn't over yet.",
+            "Push harder than yesterday.",
+            "You have the power to create change.",
+            "Keep going, keep growing.",
+            "You are capable of amazing things.",
+            "Make today amazing.",
+            "Prove yourself to yourself, not others.",
+            "If you get tired, learn to rest, not quit.",
+            "The only failure is giving up.",
+            "Don't wait for opportunity, create it.",
+            "Difficult roads often lead to beautiful destinations.",
+            "Every moment matters.",
+            "Trust the timing of your life.",
+            "Hardships often prepare ordinary people for extraordinary destiny.",
+            "Stay patient and trust your journey.",
+            "Strive for greatness.",
+            "Your goals are waiting for you."
         ];
 
         function spawnHearts() {
-            for (let i = 0; i < 30; i++) createHeart();
+            for (let i = 0; i < 20; i++) createHeart();
         }
 
         function createHeart() {
